@@ -25,16 +25,16 @@ pipeline {
                 sh 'mvn test'
             }
             
-                
-            
+       stage('Upload'){
+         steps {
+           
+            sh 'curl -X PUT -u admin:5r5h7sb5w -T target/my-app-1.0-SNAPSHOT.jar "http://13.71.125.61:8081/artifactory/example-repo-local/my-app-1.0-SNAPSHOT.jar"'
+         }
+       }
         
  }
 }
 
-def server = Artifactory.newServer url: 'http://13.71.125.61:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local', username: 'admin', password: 5r5h7sb5w'
-/*rtUpload (
-    serverId: "http://13.71.125.61:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local",
-    specPath: 'target/my-app-1.0-SNAPSHOT.jar'
-)*/
+
 
         
