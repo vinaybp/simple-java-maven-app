@@ -17,11 +17,10 @@ pipeline {
     sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
     }
     }
-}
-}
+
    
     
-      /*stage('Test') {
+     stage('Test') {
             steps {
                 sh 'mvn test'
             }
@@ -31,7 +30,8 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+ }
+        /*stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
