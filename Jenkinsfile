@@ -31,16 +31,10 @@ pipeline {
  }
 }
 
-
-rtUpload (
+def server = Artifactory.newServer url: 'http://13.71.125.61:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local', username: 'admin', password: 5r5h7sb5w'
+/*rtUpload (
     serverId: "http://13.71.125.61:8081/artifactory/webapp/#/artifacts/browse/tree/General/example-repo-local",
     specPath: 'target/my-app-1.0-SNAPSHOT.jar'
-)
-}
-        /*stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-    }
-}*/
+)*/
+
+        
