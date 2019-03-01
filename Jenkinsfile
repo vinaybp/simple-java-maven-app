@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            
+     }
        stage('Upload'){
          steps {
            
